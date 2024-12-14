@@ -42,6 +42,19 @@ class Server:
         return self.__dataset
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
+        """
+        Retrieves a page of data from the dataset.
+        Args:
+            page (int): The page number to retrieve. Defaults to 1.
+            page_size (int): The number of items per page. Defaults to 10.
+        Returns:
+            List[List]: A list of lists containing the data for the specified page.
+                        If the start index is greater than or equal to the length
+                        of the dataset, an empty list is returned.
+        Raises:
+            AssertionError: If `page` or `page_size` is not a positive integer.
+        """
+
         assert type(page) is int and page > 0 and type(
             page_size) is int and page_size > 0
         dataset = self.dataset()
