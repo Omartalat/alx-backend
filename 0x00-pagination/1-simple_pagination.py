@@ -1,4 +1,22 @@
 #!/usr/bin/env python3
+"""This module provides functionality for paginating a dataset of
+    popular baby names.
+
+Functions:
+    index_range(page: int, page_size: int) -> Tuple[int, int]:
+
+Classes:
+    Server:
+        A class to paginate a database of popular baby names.
+
+        Methods:
+            __init__():
+                Initializes the Server instance.
+
+            dataset() -> List[List]:
+                Returns the cached dataset of popular baby names.
+
+            get_page(page: int = 1, page_size: int = 10) -> List[List]:"""
 
 import csv
 import math
@@ -48,9 +66,10 @@ class Server:
             page (int): The page number to retrieve. Defaults to 1.
             page_size (int): The number of items per page. Defaults to 10.
         Returns:
-            List[List]: A list of lists containing the data for the specified page.
-                        If the start index is greater than or equal to the length
-                        of the dataset, an empty list is returned.
+            List[List]: A list of lists containing the data for
+                        the specified page. If the start index is greater
+                        than or equal to the length of the dataset,
+                        an empty list is returned.
         Raises:
             AssertionError: If `page` or `page_size` is not a positive integer.
         """
